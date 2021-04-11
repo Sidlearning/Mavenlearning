@@ -1,0 +1,18 @@
+package mylearning;
+import static io.restassured.RestAssured.*;
+
+public class ApiTest {
+	
+	public void getResponseBody() {
+		
+	given().when().get().then().log().all();
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	
+
+	}
+
+}

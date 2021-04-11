@@ -1,0 +1,32 @@
+package mylearning;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class DatabaseTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			Connection con = DriverManager.getConnection("url", "user", "password");
+			Statement stmt = con.createStatement();
+			ResultSet rt = stmt.executeQuery("select * from Xyz");
+			while (rt.next())
+			{   System.out.println(rt.getString("username"));
+			System.out.println(rt.getString("password"));
+			
+				System.out.println();
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+
+	}
+
+}
